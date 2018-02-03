@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+
+  <link style="css/jquery-ui.min.css" />
+  <link style="css/customizeCSS.css" />
+
+  <style type="text/css">
+    #anuncio {
+      background-color: rgb(20, 24, 23);
+      color: rgb(242, 243, 250);
+      width: 100%;
+    }
+
+    .micontenedor {
+      background-color: rgb(221, 72, 18);
+    }
+
+    #carrete img {
+      width: 100px;
+      height: 100px;
+    }
+
+    /*EJEMPLO 03*/
+
+    #banner {
+      background-color: rgb(179, 8, 89);
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      left: 100px;
+      top: 480px;
+      text-align: center;
+      float: left;
+    }
+
+    img {
+      float: left;
+      margin: 5px;
+
+    }
+
+  </style>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+
+  <script>
+    /*Funcion ANONIMA que Permite que el jquery se cargue despues de cargar todos los componenes de la pagina*/
+    $(document).ready(function() {
+
+      //1) EJEMPLO 01: Concepto de funciones encadenadas
+      $("#anuncio").width(100).height(100).text("Vende!!!!");
+      //Codigo Jquery que reemplaza a este codigo nativo:
+      /*var anuncio = document.getElementById("anuncio");
+      anuncio.style.width = "100px";
+      anuncio.style.height = "100px";
+      anuncio.innerHTML = "Vende";*/
+
+      //2) EJEMPLO 02: Reempazar el texto "Errores" en la etiqueta h2
+      alert($("#errores h2").html());
+      $("#errores h2").html("<p>Todo está correcto!!</p>");
+      //2.1) Agregar texto
+      $("#errores").append("Funcion APPEND que agrega el texto al final pero dentro del contenedor");
+      //2.2) Agregar antes
+      $("#errores").prepend("Funcion PREPEND que agrega el texto antes pero dentro del contenedor");
+
+      //3) EJEMPLO 03: Remover elementos
+      $("#banner").remove();
+
+
+    });
+
+    //Agregar un error de validacion al frente del campo en caso no haya sido ingresado
+    function validar() {
+      var usuario = document.getElementById("usuario").value;
+      if (usuario == "") {
+        $("#usuario").after("Rellenar este campo");
+      }
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+  <P>EJEMPLO 1:</P>
+  <div id="anuncio"> COMPRA!! </div>
+
+  <P>EJEMPLO 2:</P>
+  <div id="contenedor">
+    <div id="errores" class="micontenedor">
+      <h2>Errores</h2>
+    </div>
+  </div>
+
+  <P>EJEMPLO 2:</P>
+  <form action="" method="get">
+    <input type="text" id="usuario"><br/>
+    <input type="text" id="nombre"><br/>
+    <input type="button" value="Dale!!" onclick="validar()" />
+  </form>
+
+  EJEMPLO 3:Reemplazar y eliminar elementos<br/>
+  <div id="banner"> Banner de Prueba
+    <p id="cerrar">cerrar</p>
+  </div>
+
+  <div id="carrete">
+    <img src="img/fotomural_1.jpg" id="imagen1" />
+    <img src="img/fotomural_2.jpg" id="imagen2" />
+    <img src="img/fotomural_3.jpg" id="imagen3" />
+  </div>
+
+
+</body>
+
+<script>
+  //javascript NATIVO
+  /*var anuncio = document.getElementById("anuncio");
+  anuncio.style.width = "500px";
+  anuncio.style.height = "500px";
+  anuncio.innerHTML = "Vende";*/
+
+</script>
+
+</html>

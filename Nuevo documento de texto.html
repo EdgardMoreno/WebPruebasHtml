@@ -1,0 +1,68 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>DAT ADondeVivir</title>
+
+        <link  href="css/style.css" rel="stylesheet">
+
+
+		<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="/js/default.js"></script>
+
+    <script>
+
+      function test(){
+        var control = document.getElementById("campo1");
+        control.style.background = "red";
+        return false;
+      };
+
+      function fnOcultarTipoPers(val){
+
+        alert("hola");
+        var control = document.getElementById("tblCampos");
+
+      }
+
+    </script>
+
+
+
+    </head>
+    <body>
+        <form>
+	             <input id="campo1" type="text" name="nombre"/>
+
+
+               <table id="tblCampos" border="1" style="width:90%">
+                  <tbody>
+                  <tr>
+                      <td class="td-label-1"><label>Documento Identidad:</label></td>
+                      <td class=" text_panelGrid_4c "><input id="form:numDocuIden" type="text" name="form:numDocuIden"  style="width:70%" onchange="fnOcultarTipoPers(this.value)"></td>
+                      <td class=" td-label-1 "><label></label></td>
+                      <td class=" text_panelGrid_4c"><label></label></td>
+                  </tr>
+                  <tr>
+                      <td class="td-label-1"><label>Razón Social:</label></td>
+                      <td class=" text_panelGrid_4c "><input id="form:razonSocial" type="text" name="form:razonSocial" class="form-control left"></td>
+                      <td class=" td-label-1 "><label></label></td>
+                      <td class=" text_panelGrid_4c"><label></label></td>
+                  </tr>
+                  <tr>
+                      <td class="td-label-1"><label>Nombre:</label></td>
+                      <td class=" text_panelGrid_4c "><input id="form:primerNombre" type="text" name="form:primerNombre" class="form-control"></td>
+                      <td class=" td-label-1 "><label></label></td>
+                      <td class=" text_panelGrid_4c"><label></label></td>
+                  </tr>
+                  <tr>
+                      <td class="td-label-1"><label>Apellido Paterno:</label></td>
+                      <td class=" text_panelGrid_4c "><input id="form:apePaterno" type="text" name="form:apePaterno" class="form-control"></td>
+                      <td class=" td-label-1 "><label>Apellido Materno:</label></td>
+                      <td class=" text_panelGrid_4c"><input id="form:apeMaterno" type="text" name="form:apeMaterno" class="form-control"></td>
+                  </tr>
+              </table>
+
+      </form>
+
+    </body>
+</html>
